@@ -2,7 +2,6 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|message_id|integer|null: false, foreign_key: true|
 |name|string|null: false, index: true|
 
 ### Association
