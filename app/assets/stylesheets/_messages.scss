@@ -28,6 +28,9 @@
           align-items: center;
           background-color: #253141;
 
+          a:hover,a:visited{
+            color:#fff;
+          }
           &__box {
             height: 24px;
               display: flex;
