@@ -6,7 +6,8 @@
   .side
     .side__header
       .side__header__box
-        .side__header__box__name  ggg
+        .side__header__box__name
+          = current_user.name
         -# .side__header__box__icon  
         = link_to do
           = fa_icon 'pencil-square-o', class: 'icon'
