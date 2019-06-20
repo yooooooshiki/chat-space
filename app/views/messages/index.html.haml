@@ -1,5 +1,5 @@
 
-.flash  グループを作成しました
+-# .flash  グループを作成しました
 
 .wrapper
 
@@ -8,11 +8,11 @@
       .side__header__box
         .side__header__box__name
           = current_user.name
-        -# .side__header__box__icon  
+        .side__header__box__icon  
         = link_to do
-          = fa_icon 'pencil-square-o', class: 'icon'
-          .side__heade__box__icon__new-group
-            %i.fa.fa-edit
+          .side__header__box__icon__new-group
+            = fa_icon 'pencil-square-o', class: 'icon'
+            -# %i.fa.fa-edit
           .side__header__box__icon__edit-user 
             -# %i.fa.fa-cog
             = link_to edit_user_path(current_user) do
