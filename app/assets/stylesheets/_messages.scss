@@ -1,4 +1,6 @@
-
+* {
+  box-sizing: border-box;
+}
 .flash {
   color: white;
   font-size: 1rem;
@@ -9,6 +11,7 @@
 
   .wrapper {
     display: flex;
+    
     
     
     .side {
