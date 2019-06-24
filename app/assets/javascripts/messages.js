@@ -1,12 +1,12 @@
 $(function(){
-  function buildMESSAGE(message){
+  function buildMESSAGE(message){ 
     var html = `<div class="message">
                   <div class="upper-message">
                   <div class="upper-message__user-name">
-                  ${user.name}
+                  ${message.user_name}
                   </div>
                   <div class="upper-message__date">
-                  ${message.created_at}
+                  ${message.created_time}
                   </div>
                   </div>
                   <div class="lower-message">
@@ -17,8 +17,9 @@ $(function(){
                   </div>
                 </div>`
     return html;
+
   }
-  $('#form').on('submit', function(e){
+  $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
@@ -31,12 +32,13 @@ $(function(){
       contentType: false
     })
     .done(function(message){
+      console.log('iii');
       var html = buildMESSAGE(message);
-      $('main_body').append(html)
+      $('.main__body').append(html)
       $('#form_message').val('')
     })
     .fail(function(){
       alert('エラー');
     })
   })
-});
+});   
