@@ -1,5 +1,6 @@
 $(document).on('turbolinks:load', function(){
   function buildMESSAGE(message){ 
+    message.image == null ? insertImage = '' : insertImage = `<img class="lower-message__image" src=${message.image}>`;
     var html = `<div class="message">
                   <div class="upper-message">
                   <div class="upper-message__user-name">
@@ -14,7 +15,7 @@ $(document).on('turbolinks:load', function(){
                     ${message.content}
                     </p>
                     <p class="lower-message__image">
-                    <img src= "${message.img}">
+                    ${insertImage}
                     </P>
                   </div>
                 </div>`
@@ -41,7 +42,7 @@ $(document).on('turbolinks:load', function(){
       $("form")[0].reset()
       // $('.form__message').val('')
       $(".form__submit").prop('disabled', false);
-      $('.main').animate({scrollTop: $('.main')[0].scrollHeight});
+      $('.main__body').animate({scrollTop: $('.main__body')[0].scrollHeight});
       // scrollBottom
     })
     .fail(function(){
