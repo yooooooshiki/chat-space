@@ -40,10 +40,8 @@ $(document).on('turbolinks:load', function(){
       var html = buildMESSAGE(message);
       $('.main__body'). append(html)
       $("form")[0].reset()
-      // $('.form__message').val('')
       $(".form__submit").prop('disabled', false);
       $('.main__body').animate({scrollTop: $('.main__body')[0].scrollHeight});
-      // scrollBottom
     })
     .fail(function(){
       alert('エラー');
