@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
   function buildMESSAGE(message){ 
     var html = `<div class="message">
                   <div class="upper-message">
@@ -19,11 +19,13 @@ $(function(){
                   </div>
                 </div>`
     return html;
+ }
 
-  }
   $('#new_message').on('submit', function(e){
+
     e.preventDefault();
     var formData = new FormData(this);
+
     var url = $(this).attr('action')
     $.ajax({
       url: url,
@@ -34,13 +36,21 @@ $(function(){
       contentType: false
     })
     .done(function(message){
-      console.log('iii');
       var html = buildMESSAGE(message);
-      $('.main__body').append(html)
-      $('#form_message').val('')
+      $('.main__body'). append(html)
+      $("form")[0].reset()
+      // $('.form__message').val('')
+      $(".form__submit").prop('disabled', false);
+      $('.main').animate({scrollTop: $('.main')[0].scrollHeight});
+      // scrollBottom
     })
     .fail(function(){
       alert('エラー');
     })
   })
 });   
+
+
+
+
+
