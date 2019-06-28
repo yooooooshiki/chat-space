@@ -1,5 +1,4 @@
 $(function() {
-
   var search_list = $("#user-search-result");
   function appendUser(user){
     var html = `<div class="chat-group-user clearfix">
@@ -30,7 +29,6 @@ $(function() {
   
   $("#user-search-field").on("keyup", function() {
     var input = $("#user-search-field").val();
-    console.log(input);
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -52,7 +50,7 @@ $(function() {
     });
   });
   $("#user-search-result").on("click", ".user-search-add", function() {
-    var id = $(this).data("user-id")
+    var id = $(this).data("user-id")  
     var name = $(this).data("user-name")
     var html = appendEditUser(id,name)
     $("#chat-group-users").append(html);
