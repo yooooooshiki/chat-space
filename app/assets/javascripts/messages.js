@@ -1,6 +1,6 @@
-$(document).on('turbolinks:load', function(){
+$(function(){
   function buildMESSAGE(message){ 
-    message.image == null ? insertImage = '' : insertImage = `<img class="lower-message__image" src=${message.image}>`;
+    message.image == null ? `<img class="lower-message__image" src=${message.image}>` : "";
     var html = `<div class="message">
                   <div class="upper-message">
                   <div class="upper-message__user-name">
@@ -15,13 +15,12 @@ $(document).on('turbolinks:load', function(){
                     ${message.content}
                     </p>
                     <p class="lower-message__image">
-                    ${insertImage}
+                    <img src="${message.img}" alt=""/>
                     </P>
                   </div>
                 </div>`
     return html;
  }
-
   $('#new_message').on('submit', function(e){
 
     e.preventDefault();
