@@ -1,9 +1,6 @@
 $(function(){
-  function buildMESSAGE(message){
-    var img = ""
-    if(message.image){
-      img = `<img class="lower-message__image" src=${message.image}" alt="">`
-    }
+  function buildMESSAGE(message){ 
+    message.image == null ? `<img class="lower-message__image" src=${message.image}>` : "";
     var html = `<div class="message" data-message-id="${message.id}">
                   <div class="upper-message">
                   <div class="upper-message__user-name">
@@ -18,7 +15,7 @@ $(function(){
                     ${message.content}
                     </p>
                     <p class="lower-message__image">
-                    ${img}
+                    <img src="${message.image}" alt=""/>
                     </P>
                   </div>
                 </div>`
