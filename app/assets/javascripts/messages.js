@@ -51,7 +51,6 @@ $(function(){
   var reloadMessages = function () {
     if (window.location.href.match(/\/groups\/\d+\/messages/)){//今いるページのリンクが/groups/グループID/messagesのパスとマッチすれば以下を実行。
       var last_message_id = $('.message:last').data("message-id"); //dataメソッドで.messageにある:last最後のカスタムデータ属性を取得しlast_message_idに代入。
-      // var group_id = $(".group").data("group-id");
 
       $.ajax({ //ajax通信で以下のことを行う
         url: "api/messages", //サーバを指定。今回はapi/message_controllerに処理を飛ばす
@@ -62,7 +61,6 @@ $(function(){
       
       .done(function (messages) { //通信成功したら、controllerから受け取ったデータ（messages)を引数にとって以下のことを行う
         var insertHTML = '';//追加するHTMLの入れ物を作る
-        // debugger;
         messages.forEach(function (message) {//配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
           insertHTML = buildMESSAGE(message); //メッセージが入ったHTMLを取得
           $('.main__body').append(insertHTML);//メッセージを追加
